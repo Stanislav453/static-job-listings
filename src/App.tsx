@@ -1,12 +1,27 @@
-import { useState } from 'react'
+import { useState } from "react";
+import Header from "./components/Header";
+import JobsList from "./components/JobsList";
+import jobs from "./data/data.json";
+import type { FilterJobsDataType } from "./type";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [jobsListData, setJobsListData] = useState(jobs);
+  const [ filterJobsData, setFilterJobsData ] = useState<string[]>([]);
+
+
+  // const uniqueJobs = Array.from(new Set(filterJobsData));
+
+  // console.log(jobsListData);
+  // console.log("This is uni",uniqueJobs);
+  console.log("Co to je",filterJobsData);
+  
 
   return (
-  <h1>hellov</h1>
-
-  )
+    <>
+      <Header setFilterJobsData={setFilterJobsData} filterJobsData={filterJobsData}  />
+      <JobsList  setFilterJobsData={setFilterJobsData} jobsList={jobsListData} />
+    </>
+  );
 }
 
-export default App
+export default App;

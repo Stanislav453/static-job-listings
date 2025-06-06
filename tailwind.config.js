@@ -7,11 +7,19 @@ export default {
   theme: {
     extend: {
             colors: {
-        'component-color': '#f0fafa',
+        'list-item': '#f0fafa',
         'body-bg-color': '#e5f7f7',
         'header-bg-color': '#839b9b',
         'hover-active': '#2c3d3d',
+        "features": "#000",
+        'main-font': '#599999',
+        "second-font": "#ffffff",
+        "third-font": "#808080"
       },
+            backgroundImage: {
+        'header-desktop': "url('/public/images/bg-header-desktop.svg')",
+        'header-mobile': "url('/public/images/bg-header-mobile.svg')",
+      }
     },
   },
   plugins: [],
