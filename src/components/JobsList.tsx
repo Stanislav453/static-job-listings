@@ -1,5 +1,5 @@
 import React from "react";
-import type { FilterJobsDataType, JobDataType } from "../type";
+import type { JobDataType } from "../type";
 import dotSVG from "../../public/images/dot.svg";
 
 type JobsListType = {
@@ -9,7 +9,6 @@ type JobsListType = {
 
 const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
   const setList = (value: string) => {
-
     setFilterJobsData((job) => {
       if (!job.includes(value)) return [...job, value];
       return job;
@@ -21,17 +20,13 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
       <ul className=" flex flex-col gap-4 mx-5">
         {jobsList.map((job, index) => {
           const {
-            id,
             company,
             contract,
             featured,
-            languages,
-            level,
             location,
             logo,
             position,
             postedAt,
-            role,
             tools,
           } = job;
           return (
@@ -76,9 +71,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                   return (
                     <li key={index}>
                       <button
-                        onClick={() =>
-                          setList(tool)
-                        }
+                        onClick={() => setList(tool)}
                         className=" py-1 px-3 text-main-font font-semibold rounded-lg bg-body-bg-color "
                       >
                         {tool}

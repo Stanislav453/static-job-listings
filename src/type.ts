@@ -13,9 +13,3 @@ export type JobDataType = {
     languages: string[];
     tools: string[];
 };
-
-
-export type FilterJobsDataType = {
-    id: number,
-    name: string,
-}
