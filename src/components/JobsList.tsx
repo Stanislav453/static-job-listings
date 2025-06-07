@@ -17,7 +17,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
 
   return (
     <main className="container mx-auto mt-10 sm:mt-20">
-      <ul className=" flex flex-col gap-4 mx-5">
+      <ul className=" flex flex-col gap-8 md:gap-4 mx-5">
         {jobsList.map((job, index) => {
           const {
             company,
@@ -37,12 +37,12 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
           return (
             <li
               key={index}
-              className={`w-full flex flex-col gap-12 sm:flex-row justify-between p-3 sm:p-6 bg-list-item rounded-lg shadow-boxList ${
+              className={`relative w-full flex flex-col gap-5 md:gap-12 md:flex-row justify-between pt-8  p-3 md:p-6 bg-list-item rounded-lg shadow-boxList ${
                 featured && "border-main-font border-l-4"
               }`}
             >
               <div className="flex">
-                <div>
+                <div className=" absolute top-[-20px] md:relative md:top-0 w-[40px] md:w-[90px] " >
                   <img src={logo} alt={company} />
                 </div>
                 <div className="flex flex-col ml-5 justify-center">
@@ -78,7 +78,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                   </ul>
                 </div>
               </div>
-              <ul className="flex gap-2 items-center border-t border-black py-5 sm:p-0 sm:border-none">
+              <ul className="flex flex-wrap gap-2 items-center border-t border-black py-5 md:p-0 md:border-none">
                 {jobSections.map((job, index) => {
                   return (
                     <li key={index}>
