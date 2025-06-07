@@ -24,11 +24,16 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
             contract,
             featured,
             location,
+            languages,
+            level,
             logo,
             position,
             postedAt,
             tools,
           } = job;
+
+          const jobSections = [level, ...languages, ...tools];
+
           return (
             <li
               key={index}
@@ -74,19 +79,18 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                 </div>
               </div>
               <ul className="flex gap-2 items-center border-t border-black py-5 sm:p-0 sm:border-none">
-                {tools.map((tool, index) => {
+                {jobSections.map((job, index) => {
                   return (
                     <li key={index}>
                       <button
-                        onClick={() => setList(tool)}
+                        onClick={() => setList(job)}
                         className=" py-1 px-3 text-main-font font-semibold rounded-lg bg-body-bg-color hover:text-second-font hover:bg-main-font transition ease-in-out duration-300"
                       >
-                        {tool}
+                        {job}
                       </button>
                     </li>
                   );
                 })}
-                <li></li>
               </ul>
             </li>
           );
