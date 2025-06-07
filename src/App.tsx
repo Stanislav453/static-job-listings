@@ -7,9 +7,10 @@ import FilterJobs from "./components/FilterJobs.tsx";
 function App() {
   const [filterJobsData, setFilterJobsData] = useState<string[]>([]);
 
-  const filterList = jobs.filter((job) =>
-    filterJobsData.every((filter) => job.tools.includes(filter))
-  );
+  const filterList = jobs.filter((job) => {
+    const allTags = [...job.languages, ...job.tools, job.level];
+    return filterJobsData.every((filter) => allTags.includes(filter));
+  });
 
   return (
     <>
