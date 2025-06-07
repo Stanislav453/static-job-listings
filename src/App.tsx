@@ -5,8 +5,11 @@ import jobs from "./data/data.json";
 import FilterJobs from "./components/FilterJobs.tsx";
 
 function App() {
-  
   const [filterJobsData, setFilterJobsData] = useState<string[]>([]);
+
+  const filterList = jobs.filter((job) =>
+    filterJobsData.every((filter) => job.tools.includes(filter))
+  );
 
   return (
     <>
@@ -16,7 +19,7 @@ function App() {
           filterJobsData={filterJobsData}
         />
       </Header>
-      <JobsList setFilterJobsData={setFilterJobsData} jobsList={jobs} />
+      <JobsList setFilterJobsData={setFilterJobsData} jobsList={filterList} />
     </>
   );
 }
