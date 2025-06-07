@@ -15,10 +15,12 @@ function App() {
   return (
     <>
       <Header>
-        <FilterJobs
-          setFilterJobsData={setFilterJobsData}
-          filterJobsData={filterJobsData}
-        />
+        {filterJobsData.length != 0 && (
+          <FilterJobs
+            setFilterJobsData={setFilterJobsData}
+            filterJobsData={filterJobsData}
+          />
+        )}
       </Header>
       <JobsList setFilterJobsData={setFilterJobsData} jobsList={filterList} />
     </>
