@@ -32,7 +32,9 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
           return (
             <li
               key={index}
-              className="w-full flex flex-col gap-12 sm:flex-row justify-between p-3 sm:p-6 bg-list-item"
+              className={`w-full flex flex-col gap-12 sm:flex-row justify-between p-3 sm:p-6 bg-list-item rounded-lg shadow-boxList ${
+                featured && "border-main-font border-l-4"
+              }`}
             >
               <div className="flex">
                 <div>
@@ -40,7 +42,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                 </div>
                 <div className="flex flex-col ml-5 justify-center">
                   <div className="flex gap-3 items-center	">
-                    <h3 className="text-main-font font-semibold">{company}</h3>{" "}
+                    <h3 className="text-main-font font-semibold">{company}</h3>
                     {job.new && (
                       <span className=" text-second-font font-semibold text-xs py-1 px-2 rounded-full bg-main-font">
                         NEW!
@@ -52,7 +54,12 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                       </span>
                     )}
                   </div>
-                  <h2 className="font-bold">{position}</h2>
+                  <a
+                    href="#"
+                    className="font-bold hover:text-main-font transition ease-in-out duration-300 "
+                  >
+                    {position}
+                  </a>
                   <ul className="flex gap-2 text-sm text-third-font">
                     <li>{postedAt}</li>
                     <span className="flex">
@@ -72,7 +79,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
                     <li key={index}>
                       <button
                         onClick={() => setList(tool)}
-                        className=" py-1 px-3 text-main-font font-semibold rounded-lg bg-body-bg-color "
+                        className=" py-1 px-3 text-main-font font-semibold rounded-lg bg-body-bg-color hover:text-second-font hover:bg-main-font transition ease-in-out duration-300"
                       >
                         {tool}
                       </button>
