@@ -16,7 +16,7 @@ const JobsList = ({ setFilterJobsData, jobsList }: JobsListType) => {
   };
 
   return (
-    <main className="container mx-auto mt-10 sm:mt-20">
+    <main className="container mx-auto my-10 sm:mt-20">
       <ul className=" flex flex-col gap-8 md:gap-4 mx-5">
         {jobsList.map((job, index) => {
           const {
