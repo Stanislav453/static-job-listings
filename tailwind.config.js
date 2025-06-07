@@ -19,6 +19,9 @@ export default {
             backgroundImage: {
         'header-desktop': "url('/public/images/bg-header-desktop.svg')",
         'header-mobile': "url('/public/images/bg-header-mobile.svg')",
+      },
+      boxShadow : {
+        'boxList': '0 0px 10px 1px rgba(0,0,0,0.1)' 
       }
     },
   },
